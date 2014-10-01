@@ -5,14 +5,14 @@
 #include "mmu.h"
 #include "proc.h"
 #include "sysfunc.h"
-
+#include "pstat.h"
 
 int sys_reserve(void){
   int percent = 0;
   if(argint(0, &percent) < 0){
     return -1; //not sure
   }
-  
+  return 0;
 }
 
 int sys_spot(void){
@@ -20,9 +20,11 @@ int sys_spot(void){
   if(argint(0, &bid) < 0){
     return -1; //not sure
   }
+  return 0;
 }
 
 int sys_getpinfo(void){
+  return 0;
 }
 
 int

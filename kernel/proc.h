@@ -61,6 +61,9 @@ enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 // Per-process state
 struct proc {
+  int type;                    // type of the process, 0 -> indicate spot; 1 -> reserved;
+  int percent;                 // percent num for reserved proc
+  int bid;                     // bid num for spot proc
   uint sz;                     // Size of process memory (bytes)
   pde_t* pgdir;                // Page table
   char *kstack;                // Bottom of kernel stack for this process
